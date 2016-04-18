@@ -8,18 +8,24 @@
     <th>To Do List</th>
     <tr>
         <td>Grocery</td>
+        <td><button class="cross">X</button></td>
     </tr>
     <tr>
         <td>Go Home</td>
+        <td><button class="cross">X</button></td>
     </tr>
 </table>
 <input id ="todos" type="text">
 <button id="submit">Add New To Do</button>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
 <script>
+    var to_add = $("#todos").val();
     $( "#submit" ).click(function(){
-    console.log($("#todos").val());
-        $("#t").append($("<tr\>").append($("<td\>").text($("#todos").val())));
-})</script>
+        to_add = $("#todos").val();
+    console.log(to_add);
+        $("#t").append($("<tr\>").append($("<td\>").text(to_add)));
+
+})
+    $(".cross").click(function(){$(this).parent().parent().remove()});</script>
 </body>
 </html>

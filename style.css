@@ -6,3 +6,7 @@ th {
 tr:nth-child(even) {
     background: yellow;
 }
+.cross {
+    background-color:red;
+    font-color:white;
+}
