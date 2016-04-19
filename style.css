@@ -1,6 +1,6 @@
 th {
     background-color:grey;
-    font-color:"blue";
+    color: blue;
     font-weight: bold;
 }
 tr:nth-child(even) {
@@ -8,5 +8,5 @@ tr:nth-child(even) {
 }
 .cross {
     background-color:red;
-    font-color:white;
+    color:white;
 }

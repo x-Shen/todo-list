@@ -5,7 +5,11 @@
     </head>
 <body>
 <table id="t" style="width:100%">
-    <th>To Do List</th>
+    <tr>
+        <th>To Do List</th>
+        <th></th>
+    </tr>
+
     <tr>
         <td>Grocery</td>
         <td><button class="cross">X</button></td>
@@ -23,9 +27,14 @@
     $( "#submit" ).click(function(){
         to_add = $("#todos").val();
     console.log(to_add);
-        $("#t").append($("<tr\>").append($("<td\>").text(to_add)));
+        $("#t").append(
+                $("<tr\>")
+                        .append($("<td\>").text(to_add))
+                        .append($("<td\>").append("<button class='cross'>X")));
 
 })
-    $(".cross").click(function(){$(this).parent().parent().remove()});</script>
+    var cb = function(){$(this).parent().parent().remove()}
+    $(".cross").click(cb);
+    $("#t").on("click",".cross",cb);</script>
 </body>
 </html>
