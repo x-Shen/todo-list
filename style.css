@@ -1,3 +1,13 @@
-p:nth-child(even) {
-    background: #0000ff;
+th {
+    background-color:grey;
+    color: blue;
+    font-weight: bold;
 }
+tr:nth-child(even) {
+    background: yellow;
+}
+.cross {
+    background-color:red;
+    color:white;
+}
+

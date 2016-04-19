@@ -1,14 +1,39 @@
 <html>
-<head><title>Test Website</title></head>
+<head><title>Test Website</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+
+</head>
 <body>
-<header style="background-color:grey; font-color:blue"><h2>To Do List</h2></header>
-<table style="width:100%">
+<table id="t" style="width:100%">
+    <tr>
+        <th>To Do List</th>
+        <th></th>
+    </tr>
+
     <tr>
         <td>Grocery</td>
+        <td><button class="cross">X</button></td>
     </tr>
     <tr>
         <td>Go Home</td>
+        <td><button class="cross">X</button></td>
     </tr>
 </table>
+<input id ="todos" type="text">
+<button id="submit">Add New To Do</button>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+<script>
+    var to_add;
+    $( "#submit" ).click(function(){
+        to_add = $("#todos").val();
+        console.log(to_add);
+        $("#t").append(
+                $("<tr\>")
+                        .append($("<td\>").text(to_add))
+                        .append($("<td\>").append("<button class='cross'>X")));
+    })
+    var cb = function(){$(this).parent().parent().remove()}
+    $(".cross").click(cb);
+    $("#t").on("click",".cross",cb);</script>
 </body>
 </html>
