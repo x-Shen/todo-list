@@ -1,8 +1,12 @@
 th {
     background-color:grey;
-    font-color:"blue";
+    color: blue;
     font-weight: bold;
 }
 tr:nth-child(even) {
     background: yellow;
+}
+.cross {
+    background-color:red;
+    color:white;
 }
