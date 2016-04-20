@@ -10,10 +10,12 @@
     </tr>
     <tr><td><input class="checkbox" type="checkbox"></td>
         <td class="texts">Grocery</td>
+        <td><input class="due_date" type="date"></td>
         <td><button class="cross">X</button></td>
     </tr>
     <tr><td><input class="checkbox" type="checkbox"></td>
         <td class="texts">Go Home</td>
+        <td><input class="due_date" type="date"></td>
         <td><button class="cross">X</button></td>
     </tr>
 </table>
@@ -28,8 +30,9 @@
         $("#t").append(
                 $("<tr\>").append($("<td\>").append("<input class='checkbox' type='checkbox'>"))
                         .append($("<td\>").text(to_add))
+                        .append($("<td\>").append("<input class='due_date' type='date'>"))
                         .append($("<td\>").append("<button class='cross'>X")));
-    })
+    });
     var cb = function(){$(this).parent().parent().remove()};
     $(".cross").click(cb);
     $("#t").on("click",".cross",cb);
