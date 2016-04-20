@@ -10,4 +10,6 @@ tr:nth-child(even) {
     background-color:red;
     color:white;
 }
-Status API Training Shop Blog About
+tr.done td {
+    text-decoration:line-through;
+}

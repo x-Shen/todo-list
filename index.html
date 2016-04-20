@@ -8,12 +8,12 @@
     <tr>
         <th>To Do List</th>
     </tr>
-    <tr><td><input type="checkbox" name="to_do" value="to_do"></td>
-        <td>Grocery</td>
+    <tr><td><input class="checkbox" type="checkbox"></td>
+        <td class="texts">Grocery</td>
         <td><button class="cross">X</button></td>
     </tr>
-    <tr><td><input type="checkbox" name="to_do" value="to_do"></td>
-        <td>Go Home</td>
+    <tr><td><input class="checkbox" type="checkbox"></td>
+        <td class="texts">Go Home</td>
         <td><button class="cross">X</button></td>
     </tr>
 </table>
@@ -30,8 +30,13 @@
                         .append($("<td\>").text(to_add))
                         .append($("<td\>").append("<button class='cross'>X")));
     })
-    var cb = function(){$(this).parent().parent().remove()}
+    var cb = function(){$(this).parent().parent().remove()};
     $(".cross").click(cb);
-    $("#t").on("click",".cross",cb);</script>
+    $("#t").on("click",".cross",cb);
+    $("#t").on('click','.checkbox',function(){
+        $(this).parent().parent().addClass("done");
+        $(this).parent().parent().find(".cross").prop('disabled',true);
+    });
+</script>
 </body>
 </html>
