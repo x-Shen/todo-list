@@ -25,9 +25,8 @@
 <button id="submit">Add New To Do</button>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
 <script>
-    var to_add = $("#todos").val();
-    $( "#submit" ).click(function(){
-        to_add = $("#todos").val();
+    var add_new_line = function(){
+        var to_add = $("#todos").val();
         var due_date = $("#due_date").val();
         console.log(to_add);
         $("#t").append(
@@ -35,7 +34,8 @@
                         .append($("<td\>").text(to_add))
                         .append($("<td\>").text(due_date))
                         .append($("<td\>").append("<button class='cross'>X")));
-    });
+    }
+    $( "#submit" ).click(add_new_line);
     var cb = function(){$(this).parent().parent().remove()};
     $(".cross").click(cb);
     $("#t").on("click",".cross",cb);
