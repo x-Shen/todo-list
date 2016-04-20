@@ -6,31 +6,34 @@
 <body>
 <table id="t" style="width:100%">
     <tr>
+        <td><input class="check_all" type="checkbox"></td>
         <th>To Do List</th>
     </tr>
     <tr><td><input class="checkbox" type="checkbox"></td>
         <td class="texts">Grocery</td>
-        <td><input class="due_date" type="date"></td>
+        <td>2016-4-20</td>
         <td><button class="cross">X</button></td>
     </tr>
     <tr><td><input class="checkbox" type="checkbox"></td>
         <td class="texts">Go Home</td>
-        <td><input class="due_date" type="date"></td>
+        <td>2016-4-20</td>
         <td><button class="cross">X</button></td>
     </tr>
 </table>
 <input id ="todos" type="text">
+<input id="due_date" type="text">
 <button id="submit">Add New To Do</button>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
 <script>
     var to_add = $("#todos").val();
     $( "#submit" ).click(function(){
         to_add = $("#todos").val();
+        var due_date = $("#due_date").val();
         console.log(to_add);
         $("#t").append(
                 $("<tr\>").append($("<td\>").append("<input class='checkbox' type='checkbox'>"))
                         .append($("<td\>").text(to_add))
-                        .append($("<td\>").append("<input class='due_date' type='date'>"))
+                        .append($("<td\>").text(due_date))
                         .append($("<td\>").append("<button class='cross'>X")));
     });
     var cb = function(){$(this).parent().parent().remove()};
@@ -45,6 +48,12 @@
             $(this).parent().parent().find(".cross").prop('disabled',false);
         }
     });
+    $("#t").on("click",".check_all", function(){
+        if( $(this).prop('checked')){
+            $("tr").addClass("done");
+            $(".checkbox").prop( "checked", true );
+        }
+    })
 </script>
 </body>
 </html>
