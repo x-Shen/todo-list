@@ -7,14 +7,12 @@
 <table id="t" style="width:100%">
     <tr>
         <th>To Do List</th>
-        <th></th>
     </tr>
-
-    <tr>
+    <tr><td><input type="checkbox" name="to_do" value="to_do"></td>
         <td>Grocery</td>
         <td><button class="cross">X</button></td>
     </tr>
-    <tr>
+    <tr><td><input type="checkbox" name="to_do" value="to_do"></td>
         <td>Go Home</td>
         <td><button class="cross">X</button></td>
     </tr>
@@ -23,7 +21,7 @@
 <button id="submit">Add New To Do</button>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
 <script>
-    var to_add;
+    var to_add = $("#todos").val();
     $( "#submit" ).click(function(){
         to_add = $("#todos").val();
         console.log(to_add);
